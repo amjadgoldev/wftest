@@ -31,21 +31,21 @@ jobs:
             - 'content/chinese/**'
 
     # run only if 'english' files were changed
-    - name: english tests
+    - name: Build english
       if: steps.filter.outputs.english == 'true'
       run: |
           echo "english:"
           echo steps.filter.outputs.english
 
     # run only if 'chinese' files were changed
-    - name: chinese tests
+    - name: Build chinese 
       if: steps.filter.outputs.chinese == 'true'
       run: |
           echo "chines:"
           echo steps.filter.outputs.chinese
 
     # run if 'english' or 'chinese' files were changed
-    - name: both paths tests
-      if: steps.filter.outputs.english == 'true' || steps.filter.outputs.chinese == 'true'
-      run: |
-          echo "chines & enfg"
+    #- name: both paths tests
+      #if: steps.filter.outputs.english == 'true' || steps.filter.outputs.chinese == 'true'
+      #run: |
+          #echo "chines & enfg"
