@@ -15,26 +15,30 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          en:
+            - 'en/**'
+          zh:
+            - 'zh/**'
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    # run only if 'en' files were changed
+    - name: en tests
+      if: steps.filter.outputs.en == 'true'
+      run: ...
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          
-      - name: List Content Folders
-        run: |
-          ls content/ -all;  
+    # run only if 'zh' files were changed
+    - name: zh tests
+      if: steps.filter.outputs.zh == 'true'
+      run: ...
+
+    # run if 'en' or 'zh' files were changed
+    - name: both paths tests
+      if: steps.filter.outputs.en == 'true' || steps.filter.outputs.zh == 'true'
+      run: ...  
