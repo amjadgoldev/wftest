@@ -26,9 +26,9 @@ jobs:
       with:
         filters: |
           english:
-            - 'english/**'
+            - 'content/english/**'
           chinese:
-            - 'chinese/**'
+            - 'content/chinese/**'
 
     # run only if 'english' files were changed
     - name: english tests
