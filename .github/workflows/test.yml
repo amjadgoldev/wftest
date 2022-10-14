@@ -25,22 +25,22 @@ jobs:
       id: filter
       with:
         filters: |
-          en:
-            - 'en/**'
-          zh:
-            - 'zh/**'
+          english:
+            - 'english/**'
+          chinese:
+            - 'chinese/**'
 
-    # run only if 'en' files were changed
-    - name: en tests
-      if: steps.filter.outputs.en == 'true'
+    # run only if 'english' files were changed
+    - name: english tests
+      if: steps.filter.outputs.english == 'true'
       run: ...
 
-    # run only if 'zh' files were changed
-    - name: zh tests
-      if: steps.filter.outputs.zh == 'true'
+    # run only if 'chinese' files were changed
+    - name: chinese tests
+      if: steps.filter.outputs.chinese == 'true'
       run: ...
 
-    # run if 'en' or 'zh' files were changed
+    # run if 'english' or 'chinese' files were changed
     - name: both paths tests
-      if: steps.filter.outputs.en == 'true' || steps.filter.outputs.zh == 'true'
+      if: steps.filter.outputs.english == 'true' || steps.filter.outputs.chinese == 'true'
       run: ...  
