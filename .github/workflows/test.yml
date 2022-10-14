@@ -33,14 +33,19 @@ jobs:
     # run only if 'english' files were changed
     - name: english tests
       if: steps.filter.outputs.english == 'true'
-      run: ...
+      run: |
+          echo "english:"
+          echo steps.filter.outputs.english
 
     # run only if 'chinese' files were changed
     - name: chinese tests
       if: steps.filter.outputs.chinese == 'true'
-      run: ...
+      run: |
+          echo "chines:"
+          echo steps.filter.outputs.chinese
 
     # run if 'english' or 'chinese' files were changed
     - name: both paths tests
       if: steps.filter.outputs.english == 'true' || steps.filter.outputs.chinese == 'true'
-      run: ...  
+      run: |
+          echo "chines & enfg"
