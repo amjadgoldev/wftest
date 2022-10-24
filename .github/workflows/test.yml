@@ -25,27 +25,21 @@ jobs:
       id: filter
       with:
         filters: |
-          english:
-            - 'content/english/**'
-          chinese:
-            - 'content/chinese/**'
+          en:
+            - 'content/en/**'
+          zh:
+            - 'content/zh/**'
 
-    # run only if 'english' files were changed
-    - name: Build english
-      if: steps.filter.outputs.english == 'true'
+    # run only if 'en' files were changed
+    - name: Build en
+      if: steps.filter.outputs.en == 'true'
       run: |
-          echo "english:"
-          echo steps.filter.outputs.english
+          echo "en:"
+          echo steps.filter.outputs.en
 
-    # run only if 'chinese' files were changed
-    - name: Build chinese 
-      if: steps.filter.outputs.chinese == 'true'
+    # run only if 'zh' files were changed
+    - name: Build zh 
+      if: steps.filter.outputs.zh == 'true'
       run: |
           echo "chines:"
-          echo steps.filter.outputs.chinese
-
-    # run if 'english' or 'chinese' files were changed
-    #- name: both paths tests
-      #if: steps.filter.outputs.english == 'true' || steps.filter.outputs.chinese == 'true'
-      #run: |
-          #echo "chines & enfg"
+          echo steps.filter.outputs.zh
