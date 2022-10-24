@@ -1,0 +1,88 @@
+{{ $currentlang :=  replaceRE "(\\s)" "" $.Site.Language }}
+{{- $.Scratch.Set "usedynamic" "true" -}}
+{{ with .Site.GetPage "/_index.md" }} {{/* HOMEPAGE */}}
+    {{ $BaseURL := .Site.BaseURL }}
+    {{ with .Params.productfamily }} {{/* HOMEPAGE MENU PARAMS */}} 
+        {{- $.Scratch.Set "usedynamic" "false" -}}
+        {{ if  eq $currentlang "en" }} 
+        {{- $.Scratch.Set "BaseUrlFinalEn" $BaseURL  -}}
+        {{else}}
+        {{- $.Scratch.Set "BaseUrlFinalLang" (print $BaseURL "/" $currentlang) -}}
+        {{end}}
+
+        [
+        {{ $familysection := . }}
+            {{ $product_family_count := (len $familysection) }} 
+            {{ range $index, $element := $familysection }} {{/* MENUPARMAS PRODUCT FAMILY */}} 
+                { "nodes":[
+                    {{ $productsections := .products.items }}
+                    {{ $product_count := (len $productsections) }}
+                    {{ range $index, $element := $productsections }} {{/* MENUPARMAS PRODUCT */}} 
+                        { "nodes":[
+                            {{ with .folders }}
+                                {{ $foldersections := .folder }}
+                                {{ $folder_count := (len $foldersections) }}
+                                {{ range $index, $element := $foldersections }} {{/* MENUPARMAS FOLDER */}} 
+                                {
+                                    "text":"{{.name }}",
+                                    "hidetreemenu":"{{.hidetreemenu }}",
+                                    {{ if  eq $currentlang "en" }}"url":"{{ $.Scratch.Get "BaseUrlFinalEn" | replaceRE "/$" "" }}{{.url}}"{{else}}"url":"{{ $.Scratch.Get "BaseUrlFinalLang" | replaceRE "/$" "" }}{{.url}}"{{end}}
+                                }
+                                {{ if eq (add $index 1) $folder_count }}{{ else }},{{ end }}
+                                {{ end }}
+                            {{end}} {{/* MENUPARMAS FOLDER */}} 
+                        ],
+                            "text":"{{.name}}",
+                            "hidetreemenu":"{{.hidetreemenu }}",
+                            {{ if  eq $currentlang "en" }} "url":"{{ $.Scratch.Get "BaseUrlFinalEn"  | replaceRE "/$" "" }}{{.url}}"{{else}}"url":"{{ $.Scratch.Get "BaseUrlFinalLang"  | replaceRE "/$" "" }}{{.url}}"{{end}}
+                        }
+                        {{ if eq (add $index 1) $product_count }}{{ else }},{{ end }}
+                    {{end}} {{/* MENUPARMAS PRODUCT */}} 
+                    ],   
+                "text":"{{.name }}",
+                "hidetreemenu":"{{.hidetreemenu }}",
+                {{ if  eq $currentlang "en" }}"url":"{{ $.Scratch.Get "BaseUrlFinalEn"  | replaceRE "/$" "" }}{{.url}}"{{else}}"url":"{{ $.Scratch.Get "BaseUrlFinalLang"  | replaceRE "/$" "" }}{{.url}}"{{end}}
+                }
+                {{ if eq (add $index 1) $product_family_count }}{{ else }},{{ end }}
+        {{end}} {{/* MENUPARMAS PRODUCT FAMILY */}} 
+        ]
+    {{end}} {{/* HOMEPAGE MENU PARAMS */}} 
+{{end}} {{/* HOMEPAGE */}}
+
+{{- if eq ($.Scratch.Get "usedynamic") "true" -}}
+[
+{{ $familysection := .Site.Sections }}
+{{ $product_family_count := (len $familysection) }}
+{{ range $index, $element := $familysection.ByWeight }}
+{ "nodes":[
+        {{ $productsections := .Sections }}
+        {{ $product_count := (len $productsections) }}
+        {{ range $index, $element := $productsections.ByWeight }}
+            { "nodes":[
+                    {{ $foldersections := union .Sections .Sections }}
+                    {{ $folder_count := (len $foldersections) }}
+                    {{ range $index, $element := $foldersections.ByWeight }}
+                    {
+                        "text":"{{.Params.family_listing_page_title }}",
+                        "url":"{{ .Permalink }}"
+                    }
+                    {{ if eq (add $index 1) $folder_count }} {{ else }},{{ end }}
+                    {{ end }}
+                ],
+                "text":"{{.Params.family_listing_page_title }}",
+                "url":"{{ .Permalink }}",
+                "repo":"{{.Params.homepage_package_link }}",
+                "repo_type":"{{.Params.homepage_package_type }}"
+            }
+            {{ if eq (add $index 1) $product_count }}{{ else }},{{ end }}
+       {{ end }}
+    ],
+    "text":"{{.Params.family_listing_page_title }}",
+    "url":"{{ .Permalink }}",
+    "image_url":"{{.Params.homepage_github_image }}"
+ }
+{{ if eq (add $index 1) $product_family_count }}{{ else }},{{ end }}
+{{end}}
+]
+{{end}}
+
