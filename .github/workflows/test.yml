@@ -41,5 +41,10 @@ jobs:
     - name: Build zh 
       if: steps.filter.outputs.zh == 'true'
       run: |
-          echo "chines:"
-          echo steps.filter.outputs.zh
+          echo "en:"
+          steps:
+
+          - name: Repository Dispatch
+            uses: peter-evans/repository-dispatch@v2
+            with:
+              event-type: my-event
