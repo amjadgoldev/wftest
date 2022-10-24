@@ -48,7 +48,7 @@ jobs:
       - name: Repository Dispatch en
         uses: peter-evans/repository-dispatch@v2
         with:
-          event-type: vv-event
+          event-type: build-en
 
   # JOB to build and test zh code
   zh:
@@ -59,4 +59,4 @@ jobs:
       - name: Repository Dispatch zh
         uses: peter-evans/repository-dispatch@v2
         with:
-          event-type: vv-event
+          event-type: build-zh
