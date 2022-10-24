@@ -41,7 +41,6 @@ jobs:
     - name: Build zh 
       if: steps.filter.outputs.zh == 'true'
       run: |
-          steps:
           - name: Repository Dispatch
             uses: peter-evans/repository-dispatch@v2
             with:
