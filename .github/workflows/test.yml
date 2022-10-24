@@ -39,7 +39,7 @@ jobs:
           zh:
             - 'content/zh/**'
 
-  # JOB to build and test en code
+  # JOB to build en
   en:
     needs: changes
     if: ${{ needs.changes.outputs.en == 'true' }}
@@ -50,7 +50,7 @@ jobs:
         with:
           event-type: build-en
 
-  # JOB to build and test zh code
+  # JOB to build zh
   zh:
     needs: changes
     if: ${{ needs.changes.outputs.zh == 'true' }}
