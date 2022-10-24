@@ -17,10 +17,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  # JOB to run change detection
+  changes:
     runs-on: ubuntu-latest
+    # Set job outputs to values from filter step
+    outputs:
+      en: ${{ steps.filter.outputs.en }}
+      zh: ${{ steps.filter.outputs.zh }}
     steps:
-    - uses: actions/checkout@v2
+    # For pull requests it's not necessary to checkout the code
     - uses: dorny/paths-filter@v2
       id: filter
       with:
@@ -30,18 +35,24 @@ jobs:
           zh:
             - 'content/zh/**'
 
-    # run only if 'en' files were changed
-    - name: Build en
-      if: steps.filter.outputs.en == 'true'
-      run: |
-          echo "en:"
-          echo steps.filter.outputs.en
+  # JOB to build and test en code
+  en:
+    needs: changes
+    if: ${{ needs.changes.outputs.en == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch en
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: vv-event
 
-    # run only if 'zh' files were changed
-    - name: Build zh 
-      if: steps.filter.outputs.zh == 'true'
-      run: |
-            name: Repository Dispatch
-            uses: peter-evans/repository-dispatch@v2
-            with:
-              event-type: my-event
+  # JOB to build and test zh code
+  zh:
+    needs: changes
+    if: ${{ needs.changes.outputs.zh == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch zh
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: vv-event
