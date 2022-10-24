@@ -6,7 +6,7 @@ name: StagingEn
 on:
   # Triggers the workflow on push or pull request events but only for the mentioned branches
   push:
-    branches: [ main1 ]
+    branches: [ main ]
     paths:
        - 'content/en/**'
   pull_request:
