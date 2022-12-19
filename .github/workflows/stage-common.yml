@@ -1,0 +1,59 @@
+# This is a basic workflow to help you get started with Actions
+
+name: StageAllLangs
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'content/**'
+  pull_request:
+    branches: [ "main1" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # JOB to run change detection
+  changes:
+    runs-on: ubuntu-latest
+    # Set job outputs to values from filter step
+    outputs:
+      total: ${{ steps.filter.outputs.total }}
+      search: ${{ steps.filter.outputs.search }}
+    steps:
+    # For pull requests it's not necessary to checkout the code
+    - uses: actions/checkout@v2
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          total:
+            - 'content/en/total/**'
+          search:
+            - 'content/search/total/**'
+
+  # JOB to build en
+  total:
+    needs: changes
+    if: ${{ needs.changes.outputs.total == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch total
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: build-totalsection
+
+  # JOB to build search
+  search:
+    needs: changes
+    if: ${{ needs.changes.outputs.search == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch search
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: build-searchsection
