@@ -13,7 +13,7 @@ on:
     branches: [ main1 ]
 
   repository_dispatch:
-    types: [build-en]
+    types: [build-total]
     
   # Allows the workflow run manually from the Actions tab
   workflow_dispatch:
@@ -40,5 +40,4 @@ jobs:
 
     - name: Remove unwanted folders
       run: |
-        find ./content -mindepth 1 ! -regex '^./content/en\(/.*\)?' -delete
         ls content/ -all;
