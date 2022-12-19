@@ -40,4 +40,5 @@ jobs:
 
     - name: Remove unwanted folders
       run: |
+        echo " ===== total ===== "
         ls content/ -all;
