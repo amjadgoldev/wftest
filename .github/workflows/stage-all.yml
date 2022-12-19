@@ -47,7 +47,7 @@ jobs:
       - name: Repository Dispatch total
         uses: peter-evans/repository-dispatch@v2
         with:
-          event-type: build-en
+          event-type: build-total
 
   # JOB to build search
   search:
@@ -58,4 +58,4 @@ jobs:
       - name: Repository Dispatch search
         uses: peter-evans/repository-dispatch@v2
         with:
-          event-type: build-zh
+          event-type: build-search
