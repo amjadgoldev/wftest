@@ -7,7 +7,7 @@ weight: 1
 
 ############################# Products ############################
 productfamily:
-- name: "Aspose.Total Product Family"
+- name: "Aspose.Total Product Family m"
   homepage_dispaly_name: "Aspose.Total"
   enable: true
   url: "/total/"
