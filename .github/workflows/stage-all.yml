@@ -32,9 +32,11 @@ jobs:
       with:
         filters: |
           total:
-            - 'content/**/total'
+            - 'content/en/total'
+            - 'content/zh/total'
           search:
-            - 'content/**/search'
+            - 'content/en/search'
+            - 'content/zh/search'
 
   # JOB to build total
   total:
