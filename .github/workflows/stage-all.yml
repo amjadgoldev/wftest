@@ -34,7 +34,7 @@ jobs:
           total:
             - 'content/**/total'
           search:
-            - 'content/zh/search'
+            - 'content/**/search'
 
   # JOB to build total
   total:
