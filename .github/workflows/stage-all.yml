@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     # Set job outputs to values from filter step
     outputs:
-      en: ${{ steps.filter.outputs.en }}
-      zh: ${{ steps.filter.outputs.zh }}
+      total: ${{ steps.filter.outputs.total }}
+      search: ${{ steps.filter.outputs.search }}
     steps:
     # For pull requests it's not necessary to checkout the code
     - uses: actions/checkout@v2
@@ -31,29 +31,29 @@ jobs:
       id: filter
       with:
         filters: |
-          en:
-            - 'content/en/**'
-          zh:
-            - 'content/zh/**'
+          total:
+            - 'content/**/total'
+          search:
+            - 'content/zh/search'
 
-  # JOB to build en
-  en:
+  # JOB to build total
+  total:
     needs: changes
-    if: ${{ needs.changes.outputs.en == 'true' }}
+    if: ${{ needs.changes.outputs.total == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Repository Dispatch en
+      - name: Repository Dispatch total
         uses: peter-evans/repository-dispatch@v2
         with:
           event-type: build-en
 
-  # JOB to build zh
-  zh:
+  # JOB to build search
+  search:
     needs: changes
-    if: ${{ needs.changes.outputs.zh == 'true' }}
+    if: ${{ needs.changes.outputs.search == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Repository Dispatch zh
+      - name: Repository Dispatch search
         uses: peter-evans/repository-dispatch@v2
         with:
           event-type: build-zh
