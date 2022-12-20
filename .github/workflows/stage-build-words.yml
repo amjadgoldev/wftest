@@ -41,3 +41,7 @@ jobs:
     - name: Remove unwanted folders
       run: |
         ls content/ -all;
+        echo " ==== en "
+        ls content/en -all;
+        echo " ==== zh "
+        ls content/zh -all;
