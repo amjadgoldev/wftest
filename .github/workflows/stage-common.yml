@@ -76,4 +76,4 @@ jobs:
       - name: Repository Dispatch search
         uses: peter-evans/repository-dispatch@v2
         with:
-          event-type: build-search
+          event-type: build-words
