@@ -36,7 +36,7 @@ jobs:
           search:
             - 'content/zh/total/**'
 
-  # JOB to build en
+  # JOB to build total
   total:
     needs: changes
     if: ${{ needs.changes.outputs.total == 'true' }}
