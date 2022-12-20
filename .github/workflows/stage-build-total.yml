@@ -40,21 +40,40 @@ jobs:
 
     - name: Remove unwanted folders
       run: |
-        #find ./content/de -mindepth 1 ! -regex '^./content/de/total\(/.*\)?' -delete
-        #find ./content/el -mindepth 1 ! -regex '^./content/el/total\(/.*\)?' -delete
+      
+        if [ -d "./content/de" ]; then 
+        find ./content/de -mindepth 1 ! -regex '^./content/de/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/el" ]; then 
+        find ./content/el -mindepth 1 ! -regex '^./content/el/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/en" ]; then 
         find ./content/en -mindepth 1 ! -regex '^./content/en/total\(/.*\)?' -delete
-        #find ./content/es -mindepth 1 ! -regex '^./content/es/total\(/.*\)?' -delete
-        #find ./content/fr -mindepth 1 ! -regex '^./content/fr/total\(/.*\)?' -delete
-        #find ./content/id -mindepth 1 ! -regex '^./content/id/total\(/.*\)?' -delete
-        #find ./content/ja -mindepth 1 ! -regex '^./content/ja/total\(/.*\)?' -delete
-        #find ./content/pt -mindepth 1 ! -regex '^./content/pt/total\(/.*\)?' -delete
-        #find ./content/ru -mindepth 1 ! -regex '^./content/ru/total\(/.*\)?' -delete
-        #find ./content/tr -mindepth 1 ! -regex '^./content/tr/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/es" ]; then 
+        find ./content/es -mindepth 1 ! -regex '^./content/es/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/fr" ]; then 
+        find ./content/fr -mindepth 1 ! -regex '^./content/fr/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/id" ]; then 
+        find ./content/id -mindepth 1 ! -regex '^./content/id/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/ja" ]; then 
+        find ./content/ja -mindepth 1 ! -regex '^./content/ja/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/pt" ]; then 
+        find ./content/pt -mindepth 1 ! -regex '^./content/pt/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/ru" ]; then 
+        find ./content/ru -mindepth 1 ! -regex '^./content/ru/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/tr" ]; then 
+        find ./content/tr -mindepth 1 ! -regex '^./content/tr/total\(/.*\)?' -delete
+        fi
+        if [ -d "./content/zh" ]; then 
         find ./content/zh -mindepth 1 ! -regex '^./content/zh/total\(/.*\)?' -delete
-        echo " ===== total ===== "
+        fi
+        
         ls content/ -all;
-        echo " ===== total-zh ===== "
-        ls content/zh -all;
-        echo " ===== total-en ===== "
-        ls content/en -all;
         
