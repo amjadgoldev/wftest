@@ -15,7 +15,7 @@ tags: ['Aspose', 'Aspose.Total', 'Aspose.Words', 'Aspose.PDF', 'Aspose.Cells', '
 weight:  3
 ---
 
-{{< dbToolbar link="https://forum.aspose.com/c/total" linktext=" Support Forum " >}}
+{{< dbToolbar link="https://forum.aspose.com/c/total" linktext=" Support Forum hghgh " >}}
 
 {{< Common/h3 text="下载类库以通过 C++ API 操作文件格式"  >}}
 {{< Common/paragraph class="package-instructions">}}
