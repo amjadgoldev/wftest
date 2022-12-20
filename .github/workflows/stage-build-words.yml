@@ -40,37 +40,37 @@ jobs:
 
     - name: Remove unwanted folders
       run: |
-        if [ -d "./content/de" ] 
+        if [ -d "./content/de" ]; then 
         find ./content/de -mindepth 1 ! -regex '^./content/de/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/el" ] 
+        if [ -d "./content/el" ]; then 
         find ./content/el -mindepth 1 ! -regex '^./content/el/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/en" ] 
+        if [ -d "./content/en" ]; then 
         find ./content/en -mindepth 1 ! -regex '^./content/en/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/es" ] 
+        if [ -d "./content/es" ]; then 
         find ./content/es -mindepth 1 ! -regex '^./content/es/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/fr" ] 
+        if [ -d "./content/fr" ]; then 
         find ./content/fr -mindepth 1 ! -regex '^./content/fr/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/id" ] 
+        if [ -d "./content/id" ]; then 
         find ./content/id -mindepth 1 ! -regex '^./content/id/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/ja" ] 
+        if [ -d "./content/ja" ]; then 
         find ./content/ja -mindepth 1 ! -regex '^./content/ja/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/pt" ] 
+        if [ -d "./content/pt" ]; then 
         find ./content/pt -mindepth 1 ! -regex '^./content/pt/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/ru" ] 
+        if [ -d "./content/ru" ]; then 
         find ./content/ru -mindepth 1 ! -regex '^./content/ru/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/tr" ] 
+        if [ -d "./content/tr" ]; then 
         find ./content/tr -mindepth 1 ! -regex '^./content/tr/words\(/.*\)?' -delete
         fi
-        if [ -d "./content/zh" ] 
+        if [ -d "./content/zh" ]; then 
         find ./content/zh -mindepth 1 ! -regex '^./content/zh/words\(/.*\)?' -delete
         fi
         
