@@ -32,10 +32,28 @@ jobs:
       with:
         filters: |
           total:
+            - 'content/de/total/**'
+            - 'content/el/total/**'
             - 'content/en/total/**'
+            - 'content/es/total/**'
+            - 'content/fr/total/**'
+            - 'content/id/total/**'
+            - 'content/ja/total/**'
+            - 'content/pt/total/**'
+            - 'content/ru/total/**'
+            - 'content/tr/total/**'
             - 'content/zh/total/**'
           search:
-            - 'content/zh/search/**'
+            - 'content/de/search/**'
+            - 'content/el/search/**'
+            - 'content/en/search/**'
+            - 'content/es/search/**'
+            - 'content/fr/search/**'
+            - 'content/id/search/**'
+            - 'content/ja/search/**'
+            - 'content/pt/search/**'
+            - 'content/ru/search/**'
+            - 'content/tr/search/**'
             - 'content/zh/search/**'
 
   # JOB to build total
