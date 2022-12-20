@@ -41,7 +41,7 @@ jobs:
     - name: Remove unwanted folders
       run: |
         echo " ===== total ===== "
-        find ./content -mindepth 1 ! -regex '^./content/en/total\(/.*\)?' -delete
+        find ./content -mindepth 1 ! -regex '^./content/.*/total\(/.*\)?' -delete
         ls content/ -all;
         echo " ===== total ===== "
         ls content/en/ -all;
