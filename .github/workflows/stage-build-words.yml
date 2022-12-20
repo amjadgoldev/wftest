@@ -41,12 +41,6 @@ jobs:
     - name: Remove unwanted folders
       run: |
         
-        ls content/ -all;
-        echo " BEFORE ==== en "
-        ls content/en -all;
-        echo " ==== BEFORE zh "
-        ls content/zh -all;
-        
         if [ -d "./content/de" ]; then 
         find ./content/de -mindepth 1 ! -regex '^./content/de/words\(/.*\)?' -delete
         fi
@@ -82,7 +76,3 @@ jobs:
         fi
         
         ls content/ -all;
-        echo " ==== AFTER  en "
-        ls content/en -all;
-        echo " ==== AFTER zh "
-        ls content/zh -all;
