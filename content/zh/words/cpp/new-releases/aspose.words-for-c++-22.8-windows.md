@@ -5,7 +5,7 @@ description: " "
 keywords: ""
 page_type: single_release_page
 folder_link: "/words/cpp/new-releases/aspose.words-for-c++-22.8-windows/"
-folder_name: "aspose.Windows for C ++ 22.8 Windows"
+folder_name: "aspose.Windows for C ++ 22.8 Window rrfs"
 download_link: "/words/cpp/new-releases/aspose.words-for-c++-22.8-windows/cac061593b3cecc72f73d338b02cce6a-48-7850"
 download_text: "下载"
 intro_text: "它包含aspose.Words for C ++ 22.8仅版本的Windows Binaries"
