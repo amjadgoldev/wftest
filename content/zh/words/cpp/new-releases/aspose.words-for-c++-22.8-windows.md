@@ -28,7 +28,7 @@ weight: 194
     {{< Releases/ReleasesSingleButtons text="支持论坛" link="https://forum.aspose.com/c/words" >}}
   {{< Releases/ReleasesButtons >}}
   {{< Releases/ReleasesFileArea >}}
-    {{< Releases/ReleasesHeading h4txt="文件详细信息">}}
+    {{< Releases/ReleasesHeading h4txt="文件详细信息 nn">}}
     {{< Releases/ReleasesDetailsUl >}}
       {{< Common/li >}} 下载s: {{< /Common/li >}}
       {{< Common/li class="downloadcount" id="dwn-update-cac061593b3cecc72f73d338b02cce6a-48-7850" >}} 1 {{< /Common/li >}}
