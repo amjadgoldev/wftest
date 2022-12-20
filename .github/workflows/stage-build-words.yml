@@ -76,3 +76,6 @@ jobs:
         fi
         
         ls content/ -all;
+        
+    - name: Build total pages
+      run: hugo --config "./staging-config.toml" -b "https://releases-qa.aspose.com/" --disableKinds=taxonomy,category --cleanDestinationDir --minify
