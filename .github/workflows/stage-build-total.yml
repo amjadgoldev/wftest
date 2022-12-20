@@ -42,9 +42,7 @@ jobs:
       run: |
         echo " ===== total ===== "
         find ./content -mindepth 1 ! -regex '^./content/en/total\(/.*\)?' -delete
-        find ./content -mindepth 1 ! -regex '^./content/zh/total\(/.*\)?' -delete
         ls content/ -all;
         echo " ===== total ===== "
         ls content/en/ -all;
         echo " ===== total ===== "
-        ls content/zh/ -all;
