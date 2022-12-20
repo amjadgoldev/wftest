@@ -34,7 +34,7 @@ jobs:
           total:
             - 'content/en/total/**'
           search:
-            - 'content/search/total/**'
+            - 'content/zh/total/**'
 
   # JOB to build en
   total:
@@ -45,7 +45,7 @@ jobs:
       - name: Repository Dispatch total
         uses: peter-evans/repository-dispatch@v2
         with:
-          event-type: build-totalsection
+          event-type: build-total
 
   # JOB to build search
   search:
@@ -56,4 +56,4 @@ jobs:
       - name: Repository Dispatch search
         uses: peter-evans/repository-dispatch@v2
         with:
-          event-type: build-searchsection
+          event-type: build-search
