@@ -15,7 +15,7 @@ tags: ['doc-to-bmp', 'doc-to-emf', 'doc-to-html', 'doc-to-jpeg', 'doc-to-pdf', '
 weight:  3
 ---
 
-{{< dbToolbar link="https://forum.aspose.com/c/words" linktext=" Support Forum " >}}
+{{< dbToolbar link="https://forum.aspose.com/c/words" linktext=" Support ForumMNN " >}}
 
 {{< Common/h3 text="下载用于 Word® 文档处理的 C++ 库"  >}}
 {{< Common/paragraph class="package-instructions">}}
