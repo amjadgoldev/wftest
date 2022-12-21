@@ -43,7 +43,7 @@ weight: 195
       <h4>发行说明</h4><div><a href='https://docs.aspose.com/words/cpp/aspose-words-for-cpp-22-8-release-notes/'>https://docs.aspose.com/words/cpp/aspose-words-for-cpp-22-8-release-notes/</a></div>
   {{< /Releases/ReleasesFileFeatures >}}
   {{< Releases/ReleasesFileFeatures >}}
-      <h4>描述</h4><div class="HTMLDescription">它包含aspose.Words for C ++ 22.8版本</div>
+      <h4>描述</h4><div class="HTMLDescription">它包含aspose.Words for 888nC ++ 22.8版本</div>
   {{< /Releases/ReleasesFileFeatures >}}
  {{< /Releases/ReleasesFileArea >}}
 {{< /Releases/ReleasesWapper >}}
