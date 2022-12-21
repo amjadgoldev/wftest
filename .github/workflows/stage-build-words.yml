@@ -82,11 +82,12 @@ jobs:
       
     - name: Prepare public folder
       run: |
-        #mv public/sitemap.xml public/total.xml;
-        #rm public/index.html;
-        #mkdir public_home;
-        #mkdir public_home/sitemaps;
-        #mv public/$product_family.xml public_home/sitemaps/;
+        mv public/sitemap.xml public/total.xml;
+        rm public/index.html;
+        rm public/index.json;
+        mkdir public_home;
+        mkdir public_home/sitemaps;
+        mv public/total.xml public_home/sitemaps/;
         ls public -all;
         ls public/zh -all;
-        #ls public_home -all;
+        ls public_home -all;
