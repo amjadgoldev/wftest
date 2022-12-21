@@ -43,6 +43,7 @@ jobs:
         cp -R content content_new;
         rm -R content;
         mkdir content;
+        
         if [ -d "./content_new/de" ]; then
         cp content_new/de/_index.md content;
         fi
