@@ -92,5 +92,5 @@ jobs:
         fi
         
     - name: Build Home
-      run: hugo --config "./config/config-stage-releases-aspose-com.toml" -c "content" -b "https://products-qa.groupdocs.com/" --disableKinds=page,section --minify
+      run: hugo --config "./config/config-stage-releases-aspose-com.toml" -c "content" -b "https://releases-qa.aspose.com/" --disableKinds=page,section --minify
 
