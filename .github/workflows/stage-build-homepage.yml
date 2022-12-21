@@ -40,15 +40,19 @@ jobs:
 
     - name: Make Content folder for HomePage
       run: |
-        
+     
+        echo " ========= content BEFORE ===========";
+        ls -all;
         echo " ========= content BEFORE ===========";
         ls content -all;
+        echo " ========= content zh BEFORE ===========";
+        ls content/zh -all;
         
         cp -R content content_new;
         rm -R content;
         mkdir content;
     
-        echo " ========= all ===========";
+        echo " ========= all AFTER ===========";
         ls -all;
         echo " ========= content AFTER ===========";
         ls content -all;
