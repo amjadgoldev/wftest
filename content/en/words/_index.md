@@ -13,7 +13,7 @@ homepage_github_image: "https://aspose.github.io/img/aspose/aspose-words.png"
 weight:  2
 ---
 
-{{< dbToolbar link="https://forum.aspose.com/c/words" linktext=" Support Forum rrrr  ffff" >}}
+{{< dbToolbar link="https://forum.aspose.com/c/words" linktext=" Support Forum rrrr  ffffff" >}}
 
 {{< ProductListingWrapper family="words">}}
 
