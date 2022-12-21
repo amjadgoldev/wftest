@@ -41,30 +41,58 @@ jobs:
     - name: Make Content folder for HomePage
       run: |
      
-        echo " ========= content BEFORE ===========";
-        ls -all;
-        echo " ========= content BEFORE ===========";
-        ls content -all;
-        echo " ========= content zh BEFORE ===========";
-        ls content/zh -all;
         
         cp -R content content_new;
         rm -R content;
         mkdir content;
     
+        if [ -d "./content_new/de" ]; then
+        mkdir content/de;
+        cp content_new/de/_index.md content/de;
+        fi
+        if [ -d "./content_new/el" ]; then
+        mkdir content/el;
+        cp content_new/el/_index.md content/el;
+        fi
         if [ -d "./content_new/en" ]; then
         mkdir content/en;
         cp content_new/en/_index.md content/en;
+        fi
+        if [ -d "./content_new/es" ]; then
+        mkdir content/es;
+        cp content_new/es/_index.md content/es;
+        fi
+        if [ -d "./content_new/fr" ]; then
+        mkdir content/fr;
+        cp content_new/fr/_index.md content/fr;
+        fi
+        if [ -d "./content_new/id" ]; then
+        mkdir content/id;
+        cp content_new/id/_index.md content/id;
+        fi
+        if [ -d "./content_new/ja" ]; then
+        mkdir content/ja;
+        cp content_new/ja/_index.md content/ja;
+        fi
+        if [ -d "./content_new/pt" ]; then
+        mkdir content/pt;
+        cp content_new/pt/_index.md content/pt;
+        fi
+        if [ -d "./content_new/ru" ]; then
+        mkdir content/ru;
+        cp content_new/ru/_index.md content/ru;
+        fi
+        if [ -d "./content_new/tr" ]; then
+        mkdir content/tr;
+        cp content_new/tr/_index.md content/tr;
         fi
         if [ -d "./content_new/zh" ]; then
         mkdir content/zh;
         cp content_new/zh/_index.md content/zh;
         fi
-        echo " ========= all AFTER ===========";
-        ls -all;
-        echo " ========= content AFTER ===========";
-        ls content -all;
-        echo " ========= content zh AFTER ===========";
-        ls content/zh -all;
+        
+        - name: Build Home
+          run: hugo --config "./config/config-stage-releases-aspose-com.toml" -c "content" -b "https://products-qa.groupdocs.com/" --disableKinds=page,section --minify
+        
         
 
