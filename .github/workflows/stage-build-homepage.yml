@@ -40,6 +40,9 @@ jobs:
 
     - name: Make Content folder for HomePage
       run: |
+        
+        ls content/zh -all;
+        
         cp -R content content_new;
         rm -R content;
         mkdir content;
