@@ -33,17 +33,7 @@ jobs:
       with:
         filters: |
           homepage:
-            - 'content/de/_index.md'
-            - 'content/el/_index.md'
-            - 'content/en/_index.md'
-            - 'content/es/_index.md'
-            - 'content/fr/_index.md'
-            - 'content/id/_index.md'
-            - 'content/ja/_index.md'
-            - 'content/pt/_index.md'
-            - 'content/ru/_index.md'
-            - 'content/tr/_index.md'
-            - 'content/zh/_index.md'
+            - 'content/**'
           total:
             - 'content/de/total/**'
             - 'content/el/total/**'
