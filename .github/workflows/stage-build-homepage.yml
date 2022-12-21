@@ -80,12 +80,12 @@ jobs:
         if [ -d "./content_new/zh" ]; then
         cp content_new/zh/_index.md content/zh;
         fi
-        
+        echo " ========= all ===========";
         ls -all;
-        
+        echo " ========= content ===========";
         ls content -all;
-        
+        echo " ========= content/zh ===========";
         ls content/zh -all;
         
     - name: Build Home
-      run: hugo --config "./config/config-stage-releases-aspose-com.toml" -c "content" -b "https://products-qa.groupdocs.com/" --disableKinds=page,section --minify
+      #run: hugo --config "./config/config-stage-releases-aspose-com.toml" -c "content" -b "https://products-qa.groupdocs.com/" --disableKinds=page,section --minify
