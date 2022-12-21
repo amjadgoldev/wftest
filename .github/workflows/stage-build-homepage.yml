@@ -87,5 +87,4 @@ jobs:
         echo " ========= content/zh ===========";
         ls content/zh -all;
         
-    - name: Build Home
-      #run: hugo --config "./config/config-stage-releases-aspose-com.toml" -c "content" -b "https://products-qa.groupdocs.com/" --disableKinds=page,section --minify
+
