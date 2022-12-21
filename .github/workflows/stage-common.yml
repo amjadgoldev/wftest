@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     # Set job outputs to values from filter step
     outputs:
+      homepage: ${{ steps.filter.outputs.homepage }}
       total: ${{ steps.filter.outputs.total }}
       words: ${{ steps.filter.outputs.words }}
     steps:
@@ -31,6 +32,18 @@ jobs:
       id: filter
       with:
         filters: |
+          homepage:
+            - 'content/de/_index.md'
+            - 'content/el/_index.md'
+            - 'content/en/_index.md'
+            - 'content/es/_index.md'
+            - 'content/fr/_index.md'
+            - 'content/id/_index.md'
+            - 'content/ja/_index.md'
+            - 'content/pt/_index.md'
+            - 'content/ru/_index.md'
+            - 'content/tr/_index.md'
+            - 'content/zh/_index.md'
           total:
             - 'content/de/total/**'
             - 'content/el/total/**'
@@ -56,6 +69,18 @@ jobs:
             - 'content/tr/words/**'
             - 'content/zh/words/**'
 
+  # JOB to build total
+  homepage:
+    needs: changes
+    if: ${{ needs.changes.outputs.homepage == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch homepage
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: build-homepage
+          
+  
   # JOB to build total
   total:
     needs: changes
