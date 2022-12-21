@@ -41,7 +41,7 @@ jobs:
     - name: Make Content folder for HomePage
       run: |
         
-        ls content/zh -all;
+        #ls content/zh -all;
         
         cp -R content content_new;
         rm -R content;
@@ -81,9 +81,9 @@ jobs:
         cp content_new/zh/_index.md content/zh;
         fi
         
-        ls content -all;
+        ls -all;
         
-        ls content/en -all;
+        ls content -all;
         
         ls content/zh -all;
         
