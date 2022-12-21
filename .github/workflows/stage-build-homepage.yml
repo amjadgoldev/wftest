@@ -45,36 +45,41 @@ jobs:
         mkdir content;
         
         if [ -d "./content_new/de" ]; then
-        cp content_new/de/_index.md content;
+        cp content_new/de/_index.md content/de;
         fi
         if [ -d "./content_new/el" ]; then
-        cp content_new/el/_index.md content;
+        cp content_new/el/_index.md content/el;
         fi
         if [ -d "./content_new/en" ]; then
-        cp content_new/en/_index.md content;
+        cp content_new/en/_index.md content/en;
         fi
         if [ -d "./content_new/es" ]; then
-        cp content_new/es/_index.md content;
+        cp content_new/es/_index.md content/es;
         fi
         if [ -d "./content_new/fr" ]; then
-        cp content_new/fr/_index.md content;
+        cp content_new/fr/_index.md content/fr;
         fi
         if [ -d "./content_new/id" ]; then
-        cp content_new/id/_index.md content;
+        cp content_new/id/_index.md content/id;
         fi
         if [ -d "./content_new/ja" ]; then
-        cp content_new/ja/_index.md content;
+        cp content_new/ja/_index.md content/ja;
         fi
         if [ -d "./content_new/pt" ]; then
-        cp content_new/pt/_index.md content;
+        cp content_new/pt/_index.md content/pt;
         fi
         if [ -d "./content_new/ru" ]; then
-        cp content_new/ru/_index.md content;
+        cp content_new/ru/_index.md content/ru;
         fi
         if [ -d "./content_new/tr" ]; then
-        cp content_new/tr/_index.md content;
+        cp content_new/tr/_index.md content/tr;
         fi
         if [ -d "./content_new/zh" ]; then
-        cp content_new/zh/_index.md content;
+        cp content_new/zh/_index.md content/zh;
         fi
+        
         ls content -all;
+        
+        ls content/en -all;
+        
+        ls content/zh -all;
