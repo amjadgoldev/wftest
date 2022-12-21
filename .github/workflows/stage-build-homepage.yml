@@ -52,6 +52,14 @@ jobs:
         rm -R content;
         mkdir content;
     
+        if [ -d "./content_new/en" ]; then
+        mkdir content/en;
+        cp content_new/en/_index.md content/en;
+        fi
+        if [ -d "./content_new/zh" ]; then
+        mkdir content/zh;
+        cp content_new/zh/_index.md content/zh;
+        fi
         echo " ========= all AFTER ===========";
         ls -all;
         echo " ========= content AFTER ===========";
