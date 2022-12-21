@@ -33,7 +33,7 @@ weight: 195
       {{< Common/li >}} 下载s: {{< /Common/li >}}
       {{< Common/li class="downloadcount" id="dwn-update-637a5d6deee017e71554fa23ee106994-74-7851" >}} 1 {{< /Common/li >}}
       {{< Common/li >}} 文件大小: {{< /Common/li >}}
-      {{< Common/li id="size-update-637a5d6deee017e71554fa23ee106994-74-7851" >}} 369.57MB {{< /Common/li >}}
+      {{< Common/li id="size-update-637a5d6deee017e71554fa23ee106994-74-7851" >}} 369yy.57MB {{< /Common/li >}}
 
       {{< Common/li >}} 添加日期: {{< /Common/li >}}
       {{< Common/li id="added-update-637a5d6deee017e71554fa23ee106994-74-7851" >}}2/9/2022 {{< /Common/li >}}
