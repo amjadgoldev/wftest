@@ -41,7 +41,8 @@ jobs:
     - name: Make Content folder for HomePage
       run: |
         
-        #ls content/zh -all;
+        echo " ========= content BEFORE ===========";
+        ls content -all;
         
         cp -R content content_new;
         rm -R content;
@@ -49,9 +50,8 @@ jobs:
     
         echo " ========= all ===========";
         ls -all;
-        echo " ========= content ===========";
+        echo " ========= content AFTER ===========";
         ls content -all;
-        echo " ========= content/zh ===========";
-        ls content/zh -all;
+
         
 
