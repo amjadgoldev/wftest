@@ -93,4 +93,11 @@ jobs:
         
     - name: Build Home
       run: hugo --config "./config/config-stage-releases-aspose-com.toml" -c "content" -b "https://releases-qa.aspose.com/" --disableKinds=page,section --minify
+      
+    - name: Prepare public folder
+      run: |
+ 
+        ls public -all;
+        ls public/en -all;
+        ls public/zh -all;
 
