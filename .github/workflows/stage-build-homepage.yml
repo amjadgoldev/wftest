@@ -64,6 +64,7 @@ jobs:
         ls -all;
         echo " ========= content AFTER ===========";
         ls content -all;
-
+        echo " ========= content zh AFTER ===========";
+        ls content/zh -all;
         
 
