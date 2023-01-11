@@ -20,15 +20,15 @@ jobs:
 
 
       # Example 2
-      - name: Get changed files in the docs folder
+      - name: Get changed files in the en folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v35
         with:
           files: |
             content/en/**
 
-      - name: Run step if any file(s) in the docs folder change
+      - name: Run step if any file(s) in the en folder change
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: |
-          echo "One or more files in the docs folder has changed."
+          echo "One or more files in the en folder has changed."
           echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.all_changed_files }}"
