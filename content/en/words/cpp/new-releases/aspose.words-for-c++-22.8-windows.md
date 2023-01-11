@@ -22,7 +22,7 @@ weight: 194
 ---
 
 {{< Releases/ReleasesWapper >}}
-  {{< Releases/ReleasesHeading H2txt="aspose.Windows for C ++ 22.8 Windows" imagelink="/resources/img/zip-icon.png">}}
+  {{< Releases/ReleasesHeading H2txt="aspose.Windows for C ++ 22.8 Windows mmm" imagelink="/resources/img/zip-icon.png">}}
   {{< Releases/ReleasesButtons >}}
     {{< Releases/ReleasesSingleButtons text="下载" link="/words/cpp/new-releases/aspose.words-for-c++-22.8-windows/cac061593b3cecc72f73d338b02cce6a-48-7850" >}}
     {{< Releases/ReleasesSingleButtons text="支持论坛" link="https://forum.aspose.com/c/words" >}}
